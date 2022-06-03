@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Object.fromEntries</title>
+    </head>
+    <body>
+        <script>
+            //数组转对象
+            //二维数组
+            const result=Object.fromEntries([
+                ["name","zheke"],
+                ["subject","math,science"]
+            ]);
+            console.log(result);
+            //Map
+            const m=new Map();
+            m.set("name","school");
+            const result2=Object.fromEntries(m);
+            console.log(result2);
+
+            //Object.entries ES8 对象转数组
+            const arr=Object.entries({
+                "name":"a test",
+                "position":"hangzhou"
+            })
+            console.log(arr);
+        </script>
+    </body>
+</html>

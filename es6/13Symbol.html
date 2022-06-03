@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Symbol</title>
+    </head>
+    <body>
+        <script>
+            //创建Symbol
+            let s=Symbol();
+            console.log(s);
+            let s2=Symbol("test1");
+            let s3=Symbol("test1");
+            console.log(s2==s3);
+            let s4=Symbol.for("test2");
+            let s5=Symbol.for("test2");
+            console.log(s4==s5);
+
+            //不能和其他数组类型进行运算
+
+            //USONB you are so niubility
+            //u undefined
+            //s string symbol
+            //o object
+            //n null number
+            //b boolean
+        </script>
+    </body>
+</html>

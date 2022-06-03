@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>ES5构造函数继承</title>
+    </head>
+    <body>
+        <script>
+            //手机
+            function Phone(brand,price){
+                this.brand=brand;
+                this.price=price;
+            }
+            Phone.prototype.callPhone=function(){
+                console.log("we can call others");
+            }
+
+            //智能手机
+            function SmartPhone(brand, price, color, size){
+                Phone.call(this, brand, price);
+                this.color=color;
+                this.size=size;
+            }
+
+            //设置子级构造函数的原型
+            SmartPhone.prototype=new Phone;
+            SmartPhone.prototype.constructor=SmartPhone;
+
+            //声明子类的方法
+            SmartPhone.prototype.photo=function(){
+                console.log("i can take photos");
+            }
+            SmartPhone.prototype.playGames=function(){
+                console.log("i can play games");
+            }
+
+            const huawei = new SmartPhone("mate","5999","black","119g");
+            console.log(huawei.price);
+            console.log(huawei);
+        </script>
+    </body>
+</html>

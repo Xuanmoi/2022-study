@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Promise基本语法</title>
+    </head>
+    <body>
+        <script>
+            //实例化Promise语法
+            const p = new Promise(function(resolve,reject){
+                setTimeout(function(){
+                    // let data="获取到了数据库中的数据";
+
+                    // //获取成功
+                    // resolve(data);
+                    let reason="或许你的数据格式有问题";
+
+                    //获取失败
+                    reject(reason);
+                },1000)
+            });
+
+            //调用promise 对象的 then 方法 前者是成功时候调用的 后者是失败时候调用的
+            p.then(function(value){
+                console.log(value);
+            },function(reason){
+                console.error(reason);
+            })
+        </script>
+    </body>
+</html>

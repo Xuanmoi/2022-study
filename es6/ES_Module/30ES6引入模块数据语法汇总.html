@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>ES6模块化</title>
+    </head>
+    <body>
+        <script type="module">
+
+            //1.通用的导入方式
+            //引入m1.js模块内容
+            // //分别暴露
+            // import * as m1 from "./js/m1.js";
+            // console.log(m1);
+            // //统一暴露
+            // import * as m2 from "./js/m2.js";
+            // console.log(m2);
+            // //默认暴露
+            // import * as m3 from "./js/m3.js";
+            // console.log(m3);
+
+            //2.解构赋值形式
+            // import {school,teach} from "./js/m1.js";
+            // import {school as zheke,findJob} from "./js/m2.js";
+            // import {default as m3} from "./js/m3.js";
+            // console.log(school);
+            // console.log(zheke);
+            // console.log(m3.school);
+
+            //3.简便形式 针对默认暴露
+            import m3 from "./js/m3.js"
+            console.log(m3);
+        </script>
+    </body>
+</html>

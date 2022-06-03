@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>生成器</title>
+    </head>
+    <body>
+        <script>
+            //生成器其实就是一个特殊的函数
+            //异步编程 纯回调函数 node fs ajax mongodb
+            //yield 函数代码的分隔符
+            function * gen(){
+                console.log("111");
+                yield "两只老虎";
+                console.log("222");
+                yield "一只没有耳朵";
+                console.log("3333");
+                yield "一只没有尾巴";
+            }
+
+            let iterator=gen();
+            iterator.next()
+            console.log(iterator.next());
+            console.log(iterator.next());
+            console.log(iterator.next());
+            console.log(iterator.next());
+            // for(v of gen()){
+            //     console.log(v)
+            // }
+        </script>
+    </body>
+</html>

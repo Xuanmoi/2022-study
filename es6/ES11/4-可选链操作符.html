@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>可选链操作符</title>
+    </head>
+    <body>
+        <script>
+            function main(config){
+                //const dbHost=config&&config.db&&config.db.host;
+                const dbHost=config?.db?.host;
+                console.log(dbHost);
+            }
+            main({
+                db:{
+                    host:"192.168.56.101",
+                    username:"kyo"
+                },
+                cache:{
+                    host:"192.168.56.102",
+                    username:"lin"
+                }
+            })
+        </script>
+    </body>
+</html>

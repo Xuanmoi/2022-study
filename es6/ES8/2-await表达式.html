@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>await</title>
+    </head>
+    <body>
+        <script>
+            //创建Promise对象
+            const p=new Promise((resolve,reject)=>{
+                //resolve("获取到的用户的数据");
+                reject("获取到失败的原因");
+            })
+            //await 要放到async函数中
+            async function main(){
+                try{
+                    let result =await p;
+                    console.log(result);
+                }catch(e){
+                    console.log(e);
+                }
+                
+            }
+            //调用函数
+            main();
+        </script>
+    </body>
+</html>.

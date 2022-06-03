@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[40],{251:(e,s,l)=>{l.r(s),l.d(s,{default:()=>o}),console.log("add js file was loaded"),console.log("22");const o=function(e,s){return e+s}}}]);

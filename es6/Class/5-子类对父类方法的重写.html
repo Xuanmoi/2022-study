@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>子类对父类方法的重写</title>
+    </head>
+    <body>
+        <script>
+            class Phone{
+                //构造方法
+                constructor(brand,price){
+                    this.brand=brand;
+                    this.price=price;
+                }
+                //父类的成员属性
+                call(){
+                    console.log("i can call others");
+                }
+            }
+
+            class SmartPhone extends Phone{
+                //构造方法
+                constructor(brand,price,color,size){
+                    super(brand,price);//==Phone.call(brand,price);
+                    this.color=color;
+                    this.size=size;
+                }
+
+                photo(){
+                    console.log("i can take photos");
+                }
+                playGames(){
+                    console.log("i can play games");
+                }
+                call(){
+                    console.log("i can call anyone");
+                }
+            }
+            const xiaomi=new SmartPhone("xiaomi",2888,"black","199g");
+            console.log(xiaomi);
+            xiaomi.call();
+        </script>
+    </body>
+</html>

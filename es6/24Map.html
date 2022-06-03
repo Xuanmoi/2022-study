@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Map</title>
+    </head>
+    <body>
+        <script>
+            //声明Map
+            let m = new Map();
+
+            //添加元素
+            m.set("name","tweet");
+            m.set("change",function(){
+                console.log("we can change something.");
+            })
+            let key={
+                school:"zheke"
+            }
+            m.set(key,['key1','key2']);
+            console.log(m);
+
+            //size
+            console.log(m.size);
+            //删除
+            m.delete("name");
+            //获取
+            console.log(m.get("change"));
+            console.log(m.get(key));
+            //遍历
+            for(let v of m){
+                console.log(v);
+            }
+            //清空
+            m.clear()
+
+        </script>
+    </body>
+</html>

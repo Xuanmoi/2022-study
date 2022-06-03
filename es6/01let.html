@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>let</title>
+    </head>
+    <body>
+        <script>
+            //声明变量
+            let a;
+            let b,c,d;
+            let e=100;
+            let f=532,g='test',h=[];
+
+            //1.变量不能重复声明；
+            // let star="test1";
+            // let star="test2";
+
+            //2.块级作用域 全局 函数 eval
+            //if else while for
+            // {
+            //     let girl="dane";
+            //     var boy="jack";
+            // }
+            // console.log(girl);
+            // console.log(jack);
+
+            //3.不存在变量提升
+            // console.log(song);
+            // var song="恋爱达人";
+            // console.log(ending);
+            // let ending="tody";
+
+            //4.不影响作用域链
+            {
+                let school="a sschoole";
+                function fn(){
+                    console.log(school);
+                }
+                fn();
+            }
+        </script>
+    </body>
+</html>.

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>取消请求</title>
+    </head>
+    <body>
+        <button onclick="getProduct1()">获取商品列表1</button>
+        <button onclick="getProduct2()">获取商品列表2</button>
+        <button onclick="cancelReq()">取消请求</button>
+    </body>
+    <script src="https://cdn.bootcss.com/axios/0.17.1/axios.min.js"></script>
+    <script>
+        let cancel;//用于保存取消请求的函数
+        function getProduct1(){
+            axios({
+                url:"http://localhost:4000/products1",
+                cancelToken:new axios.CancelToken(function executor(c){//c是用于取消当前请求的函数
+                    //保存取消函数，用于之后可能需要取消当前请求
+                    cancel=c;
+                })
+            }).then(
+                response=>{
+                    //请求结束了 就可以干掉cancel了 因为再也用不到了
+                    console.log("请求1数据成功了",response.data);
+                    cancel=null;
+                },
+                error=>{
+                    console.log("请求1失败了",error.message,error);
+                    cancel=null;
+                }
+            )
+        }
+
+        function getProduct2(){
+            axios({
+                url:"http://localhost:4000/products2"
+            }).then(
+                response=>{
+                    console.log("请求2数据成功了",response.data);
+                },
+                error=>{
+                    console.log("请求2失败了",error.message);
+                }
+            )
+        }
+
+        function cancelReq(){
+            console.log("cancel request");
+            //执行取消请求的函数
+            if(typeof cancel==='function'){
+                cancel("强制取消请求");
+            }else{
+                console.log("没有可取消的请求");
+            }
+            
+        }
+    </script>
+</html>

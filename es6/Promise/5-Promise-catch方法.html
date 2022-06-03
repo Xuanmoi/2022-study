@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Promise catch方法</title>
+    </head>
+    <body>
+        <script>
+            const p=new Promise((resolve,reject)=>{
+                setTimeout(function(){
+                    reject("no thing");
+                },1000);
+            })
+
+            // p.then(value=>{},reason=>{
+            //     console.log(reason);
+            // })
+            p.catch(function(reason){
+                console.log(reason);
+            })
+        </script>
+    </body>
+</html>

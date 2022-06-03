@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>rest参数</title>
+        
+    </head>
+    <body>
+        <script>
+            //ES6引入rest参数，用于获取函数的实参，用来代替arguments
+            //ES5获取实参的方式
+            function date(){
+                console.log(arguments);
+            }
+            console.log("test1","test2","test3");
+            //rest参数
+            function date2(...args){
+                console.log(args);//args是数组,可以使用filter some every map
+            }
+            date2("kk1","jy","tc");
+
+            //rest参数必须要放到参数最后
+            function fn(a,b,...args){
+                console.log(a);
+                console.log(b);
+                console.log(args);
+            }
+            fn(1,2,3,4,5,6,7);
+        </script>
+    </body>
+</html>

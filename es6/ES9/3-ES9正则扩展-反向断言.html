@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>正则扩展-反向断言</title>
+    </head>
+    <body>
+        <script>
+            //声明字符串
+            let str="ks4781草芸1314哈哈哈哈";
+            //正向断言
+            // const reg=/\d+(?=哈)/;
+            // const result=reg.exec(str);
+            // console.log(result);
+            //反向断言
+            const reg=/(?<=芸)\d+/;
+            const result=reg.exec(str);
+            console.log(result);
+        </script>
+    </body>
+</html>

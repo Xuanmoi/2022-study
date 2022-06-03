@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Symbol创建对象属性</title>
+    </head>
+    <body>
+        <script>
+            //向对象中添加方法up down
+            let game={
+                name:"game"
+            }; 
+            //声明一个对象
+            let methods={
+                up:Symbol(),
+                down:Symbol()
+            };
+            game[methods.up]=function(){
+                console.log("up up");
+            }
+            game[methods.down]=function(){
+                console.log("down down");
+            }
+            console.log(game)
+            game[methods.down]();
+
+            let youxi = {
+                name:"狼人杀",
+                [Symbol.for("say")]:function(){
+                    console.log("i can say");
+                },
+                [Symbol.for("kill")]:function(){
+                    console.log("i can kill someone");
+                }
+            }
+            console.log(youxi);
+            youxi[Symbol.for("kill")]();
+
+        </script>
+    </body>
+</html>
