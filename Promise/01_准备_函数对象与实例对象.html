@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01 函数对象与实例对象</title>
+</head>
+<body>
+    <!-- 
+    1.1 区别实例对象与函数对象
+    1.实例对象：new 函数产生的对象，称之为实例对象，简称为对象
+    2.函数对象：将函数作为对象使用时，简称为函数对象
+    -->
+    <script>
+        //括号左边是函数，点的左边是对象
+        function Fn(){ //Fn函数
+
+        }
+        const fn=new Fn();//Fn是构造函数 fn是实例对象 简称为对象
+        console.log(Fn.prototype); //Fn是函数对象  去操作（读取更改写入）它属性或者方法
+        Fn.call({})//Fn是函数对象
+        $("#test")//$是jquery 函数
+        $.get("/test")//$是jquery 函数对象
+    </script>
+</body>
+</html>
