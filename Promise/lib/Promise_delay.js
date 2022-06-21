@@ -195,6 +195,29 @@
 
         })
     }
+
+    Promise.resolveDelay=function(value,time){
+        return new Promise((resolve,reject)=>{
+            setInterval(function(){
+                if(value instanceof Promise){
+                    value.then(resolve,reject);
+                }else{
+                    resolve(value);
+                }
+            },time);
+        })
+    }
+
+    Promise.rejectDelay=function(reason,time){
+        //返回一个失败的promise
+        return new Promise((resolve,reject)=>{
+            setTimeout(function(){
+                reject(reason);
+            },time);
+        })
+    }
+
+
     //向外暴露Promise函数
     window.Promise=Promise;
 })(window)
